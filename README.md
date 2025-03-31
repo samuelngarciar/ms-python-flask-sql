@@ -68,6 +68,10 @@ time curl -v "http://127.0.0.1:5000/protected/sysobjects?limit=3&offset=10"
 time curl -v -u test:password "http://127.0.0.1:5000/protected/sysobjects?limit=3&offset=10"
 ![image](https://github.com/user-attachments/assets/99935985-5319-4858-8877-653c02e92284)
 
+### Container traces
+![image](https://github.com/user-attachments/assets/21866ae4-356d-4a3a-b8a9-cfd036c0bff0)
+
+
 
 
 
