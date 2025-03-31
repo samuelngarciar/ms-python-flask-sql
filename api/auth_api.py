@@ -1,6 +1,6 @@
 from flask import jsonify, request, abort
-import hashlib
 import logging
+import bcrypt
 
 from services.sys_objects_service import SysObjectsService
 from utils.input_validation import validate_input
@@ -8,12 +8,12 @@ from utils.input_validation import validate_input
 logger = logging.getLogger(__name__)
 
 
-
 def authenticate(username, password, app):
     logger.info("authenticate")
-    hashed_password = hashlib.sha256(password.encode()).hexdigest()
+   
+    hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
     secretKey = app.config['SECRET_KEY']    
-    if username == "test" and hashed_password == hashlib.sha256(secretKey.encode()).hexdigest():
+    if username == "test" and bcrypt.checkpw(secretKey.encode(), hashed_password):
         return True
     return False
 
