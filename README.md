@@ -11,6 +11,11 @@ Technical aspects follows:
 3. Basic autentication
 4. Method for test the health service
 
+### Technical stack used
+  - Flask: A lightweight web framework for building web applications in Python. It's easy to use and great for small projects.
+  - pyodbc: Connects Python to various databases using ODBC (Open Database Connectivity).
+  - bcrypt: A library for hashing passwords securely. It helps protect user passwords by making them harder to crack.
+
 ## Setup database container 
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourPassword01-' -p 1433:1433 --name sqlserver4 -d mcr.microsoft.com/mssql/server:2019-latest
 ![image](https://github.com/user-attachments/assets/9061078a-889c-4add-9746-f9a157da5deb)
